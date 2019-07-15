@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AccountsService } from '../../services/accounts/accounts.service';
 
 @Component({
   selector: 'app-login',
@@ -12,16 +13,21 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
-    ) { }
+    private router: Router,
+    private accountService: AccountsService
+  ) { }
 
   ngOnInit() {
     this.buildForm();
   }
 
   login() {
-    console.log(this.loginForm.value);
-    this.router.navigate(['app/tabs']);
+    const user = this.loginForm.value;
+    this.accountService.login(user).then(() => {
+      this.router.navigate(['app/tabs']);
+    }).catch(error => {
+      alert(error.message);
+    });
   }
 
   buildForm() {
@@ -31,5 +37,4 @@ export class LoginComponent implements OnInit {
       password: [null, Validators.compose([Validators.required, Validators.pattern(regExp)])]
     });
   }
-
 }
