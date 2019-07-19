@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://localhost:44343'
+  baseUrl: 'https://pf7mri21k8.execute-api.us-east-1.amazonaws.com/Prod'
 };
 
 /*

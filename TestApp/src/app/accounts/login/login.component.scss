@@ -1,4 +1,30 @@
 .card-style {
-  height: 100%;
-  vertical-align: middle;
+  vertical-align: center;
+  background-color: white;
+  align-self: center;
+  margin-top: 30%
+}
+
+.backgroud {
+  background-image: url("../../../assets/images/Abstract-blue-background.jpg");
+  height: 100vh;
+}
+
+.flex-box {
+  display: flex;
+  flex: 1;
+  align-items: flex-start
+}
+
+.icon-style {
+  width: 20vw;
+  height: 10vh;
+  object-fit: fill;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-style {
+  color: #6FA3FF;
 }
