@@ -2,12 +2,30 @@
   vertical-align: center;
   background-color: white;
   align-self: center;
-  margin-top: 30%
+  margin-top: 30%;
+  z-index: 100;
+  opacity: 1;
 }
 
 .backgroud {
   background-image: url("../../../assets/images/Abstract-blue-background.jpg");
-  height: 100vh;
+  position: absolute;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.opacity {
+  background: rgba(255, 255, 255, 0.3);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .flex-box {
