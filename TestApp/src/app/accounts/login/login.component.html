@@ -1,64 +1,59 @@
 <ion-content center text-center>
-  <div class="flex-box">
-    <ion-grid class="backgroud">
-      <div class="backgroud">
-        <div class="opacity">
-          <ion-row center>
-            <ion-col>
-              <ion-card class="card-style">
-                <form [formGroup]="loginForm">
-                  <ion-grid>
-                    <ion-row color="primary" justify-content-center>
-                      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-                        <div style="margin-top: 20px" text-center>
-                          <h3 class="title-style">
-                            <ion-icon name="person"></ion-icon>&nbsp;&nbsp;Sign In
-                          </h3>
-                          <img class="icon-style" src="../../../assets/icon/team.png" alt="tool icon">
-                        </div>
-                        <div padding>
-                          <ion-item>
-                            <ion-label color="primary" position="floating">
-                              <ion-icon name="mail"></ion-icon>&nbsp;&nbsp;Email
-                            </ion-label>
-                            <ion-input class="input-style" name="email" type="email" formControlName="email">
-                            </ion-input>
-                          </ion-item>
-                          <ion-item>
-                            <ion-label color="primary" position="floating">
-                              <ion-icon name="lock"></ion-icon>&nbsp;&nbsp;Password
-                            </ion-label>
-                            <ion-input name="password" type="password" formControlName="password">
-                            </ion-input>
-                          </ion-item>
-                          <p><a href="login.component.html">Forgot your password?</a></p>
-                        </div>
-                        <div padding>
-                          <ion-button color="primary" (click)="login()" size="large" type="submit"
-                            [disabled]="loginForm.invalid" expand="block" shape="round" fill="outline"
-                            class="button-style">
-                            <ion-icon name="construct"></ion-icon>
-                            &nbsp;&nbsp;Login
-                          </ion-button>
-                        </div>
-                        <div>
-                          <p>Or sign in with:</p>
-                          <ion-button color="primary" size="small">
-                            <ion-icon name="logo-facebook"></ion-icon>&nbsp;&nbsp;Facebook
-                          </ion-button>
-                          <ion-button color="danger" size="small">
-                            <ion-icon name="logo-googleplus"></ion-icon>&nbsp;&nbsp;Google
-                          </ion-button>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                  </ion-grid>
-                </form>
-              </ion-card>
-            </ion-col>
-          </ion-row>
-        </div>
-      </div>
-    </ion-grid>
-  </div>
+  <ion-grid>
+    <div class="backgroud">
+      <ion-row center>
+        <ion-col>
+          <ion-card class="card-style">
+            <form [formGroup]="loginForm">
+              <ion-grid>
+                <ion-row color="primary" justify-content-center>
+                  <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+                    <div style="margin-top: 20px" text-center>
+                      <h3 class="title-style">
+                        <ion-icon name="person"></ion-icon>&nbsp;&nbsp;Sign In
+                      </h3>
+                      <img class="icon-style" src="../../../assets/icon/team.png" alt="tool icon">
+                    </div>
+                    <div padding>
+                      <ion-item>
+                        <ion-label color="primary" position="floating">
+                          <ion-icon name="mail"></ion-icon>&nbsp;&nbsp;Email
+                        </ion-label>
+                        <ion-input class="input-style" name="email" type="email" formControlName="email">
+                        </ion-input>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label color="primary" position="floating">
+                          <ion-icon name="lock"></ion-icon>&nbsp;&nbsp;Password
+                        </ion-label>
+                        <ion-input name="password" type="password" formControlName="password">
+                        </ion-input>
+                      </ion-item>
+                      <p><a href="login.component.html">Forgot your password?</a></p>
+                    </div>
+                    <div padding>
+                      <ion-button color="primary" (click)="login()" size="large" [disabled]="loginForm.invalid"
+                        expand="block" shape="round" fill="outline">
+                        <ion-icon name="construct"></ion-icon>
+                        &nbsp;&nbsp;Login
+                      </ion-button>
+                    </div>
+                    <div>
+                      <p>Or sign in with:</p>
+                      <ion-button color="primary" size="small">
+                        <ion-icon name="logo-facebook"></ion-icon>&nbsp;&nbsp;Facebook
+                      </ion-button>
+                      <ion-button color="danger" size="small">
+                        <ion-icon name="logo-googleplus"></ion-icon>&nbsp;&nbsp;Google
+                      </ion-button>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </form>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
 </ion-content>

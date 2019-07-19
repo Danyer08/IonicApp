@@ -10,5 +10,22 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <div class="d-flex justify-content-right">
+      <ion-button size="small">Add Product</ion-button>
+    </div>
+    <ion-row *ngFor="let product of products">
+      <div class="table">
+        <ion-col>
+          <h3 class="text">{{product.name}}</h3>
+          <div class="row">
+            <p class="ml-5">Price: {{product.price}}</p>
+            <p class="ml-5">Amount: {{product.amount}}</p>
+            <p class="ml-5">Threshold: {{product.threshold}}</p>
+            <img src="{{product.image}}" alt="{{product.image}}">
+          </div>
+        </ion-col>
+      </div>
+    </ion-row>
+  </ion-grid>
 </ion-content>

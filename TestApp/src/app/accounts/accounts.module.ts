@@ -8,6 +8,10 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
+    path: 'settings',
+    component: AccountsComponent
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
