@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { AlertService } from '../services/alert/alert.service';
+import { ProductsService } from '../services/products/products.service';
 
 @Component({
   selector: 'app-products',
@@ -13,22 +14,32 @@ export class ProductsComponent implements OnInit {
       price: 200,
       amount: 20,
       threshold: 5,
-      image: 'https://www.hollisterwhitney.com/wp-content/uploads/2018/02/1-Overhead-Traction-Machine-510px.png'
+      imageUrl: 'https://www.hollisterwhitney.com/wp-content/uploads/2018/02/1-Overhead-Traction-Machine-510px.png'
     },
     {
       name: 'Extractor',
       price: 200,
       amount: 20,
       threshold: 5,
-      image: 'http://creditek.co.cr/wp-content/uploads/2016/10/kvib606dss.png'
+      imageUrl: 'http://creditek.co.cr/wp-content/uploads/2016/10/kvib606dss.png'
     }
   ];
 
-  constructor(private router: Router) { }
+  constructor(
+    private productService: ProductsService,
+    private alertService: AlertService
+  ) { }
 
-  ngOnInit() {}
-
-  logout() {
-    this.router.navigate(['accounts/login']);
+  ngOnInit() {
+    this.loadProducts();
   }
+
+  private loadProducts() {
+    this.productService.getProducts().then(products => {
+      this.products = products;
+    }).catch(error => {
+      this.alertService.showMessage(error.message);
+    });
+  }
+
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AccountsService } from '../../services/accounts/accounts.service';
+import { AlertService } from 'src/app/services/alert/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private accountService: AccountsService
+    private accountService: AccountsService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -26,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.accountService.login(user).then(() => {
       this.router.navigate(['app/tabs']);
     }).catch(error => {
-      alert(error.message);
+      this.alertService.showMessage(error.message);
     });
   }
 
